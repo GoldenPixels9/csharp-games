@@ -4,8 +4,7 @@ namespace unit02_hilo
 {
     class Director
     {
-        static void Main(string[] args)
-        {
+        public void runGame() {
             int score = 300;
             
             while (score > 0) {
@@ -17,7 +16,7 @@ namespace unit02_hilo
 
                 //user input
                 Console.WriteLine("The card is: " + publicNumber);
-                Console.WriteLine("Higher or Lower? (h/l): ");
+                Console.Write("Higher or Lower? (h/l): ");
                 string input = Console.ReadLine();
 
                 if (input == "h" && secretNumber >= publicNumber) {
@@ -35,8 +34,9 @@ namespace unit02_hilo
 
                 Console.WriteLine("You're next card was: " + secretNumber);
                 Console.WriteLine("Your score is: " + score);
-                Console.WriteLine("Play Again? (y/n)");
+                Console.Write("Play Again? (y/n)");
                 string playAgain = Console.ReadLine();
+                Console.WriteLine();
 
                 if (playAgain == "y") {
                     score = 300;
@@ -45,7 +45,6 @@ namespace unit02_hilo
                     break;
                 }
             }
-
         }
     }
 }
