@@ -2,10 +2,10 @@ using System;
 
 namespace unit03_jumper
 {
-    public class Jumper{
+    public class Jumper{ //Jumper class handles the lives of the jumper as well as printing his animation status
         TerminalService terminalservice = new TerminalService();
         int lives;
-        public Jumper()
+        public Jumper() //initializes the lives, and displays them at the beginning of the game.
         {
             lives = 4;
             Console.WriteLine();
@@ -13,7 +13,7 @@ namespace unit03_jumper
             displayLives(lives);
         }
 
-        public void displayLives(int lives)
+        public void displayLives(int lives) //displays the parachute at different levels based on the number of lives the player has.
         {
             if (lives == 4)
             {
@@ -43,6 +43,7 @@ namespace unit03_jumper
 
             if (lives > 0) 
             {
+                Console.WriteLine();
                 Console.WriteLine("      0   ");
                 Console.WriteLine("     /|\\ ");
                 Console.WriteLine("     / \\ ");
@@ -50,6 +51,7 @@ namespace unit03_jumper
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("      X   ");
                 Console.WriteLine("     /|\\ ");
                 Console.WriteLine("     / \\ ");
@@ -57,12 +59,12 @@ namespace unit03_jumper
             }
         }
 
-        public int returnLives()
+        public int returnLives() //returns the amount of lives the player has
         {
             return lives;
         }
 
-        public void updateLives(int updatedLives) 
+        public void updateLives(int updatedLives) //Updates the lives of this class so that this class can stay updated with whats going on.
         {
             lives = updatedLives;
         }
