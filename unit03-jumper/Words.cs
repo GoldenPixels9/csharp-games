@@ -6,9 +6,7 @@ namespace unit03_jumper
 {
     public class Words{ //Words class handles and updates anything with the user letter guess, and the generated word.
 
-        private List<String> wordList = new List<String>{"apple", "ironman", "cube", "paradox", "twenty", "lightswitch", "paradigm", "Cow", "First",
-        "Lion", "Giant", "Frozen", "Olaf", "Mouse", "Grandma", "The", "Quick", "Brown", "Fox", "Jumped", "Over", "The", "Lazy", "Brown", "Bear", "Scout",
-        "is", "Trustworthy", "Loyal", "Helpful", "Kind", "Thrifty", "Brave", "Clean", "Reverent", "On", "My", "Honor", "Will", "Duty", "Country"};
+        private List<String> wordList = new List<String>{"iron", "man", "totally", "cool"};
 
         private TerminalService terminalservice = new TerminalService(); 
         private string secretWord = "";
