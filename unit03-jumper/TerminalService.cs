@@ -24,5 +24,20 @@ namespace unit03_jumper
         {
             Console.WriteLine(text);
         }
+
+        public void WriteSpace()
+        {
+            Console.WriteLine();
+        }
+
+        public void WriteChar(char text)
+        {
+            Console.WriteLine(text);
+        }
+
+        public void WriteTextSameLine(string text)
+        {
+            Console.Write(text);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace unit03_jumper
 
         private List<String> wordList = new List<String>{"apple", "ironman", "cube", "paradox", "twenty", "lightswitch", "paradigm", "Cow", "First",
         "Lion", "Giant", "Frozen", "Olaf", "Mouse", "Grandma", "The", "Quick", "Brown", "Fox", "Jumped", "Over", "The", "Lazy", "Brown", "Bear", "Scout",
-        "is", "Trustworthy", "Loyal", "Helpful", "Kind", "Thrifty"};
+        "is", "Trustworthy", "Loyal", "Helpful", "Kind", "Thrifty", "Brave", "Clean", "Reverent", "On", "My", "Honor", "Will", "Duty", "Country"};
 
         private TerminalService terminalservice = new TerminalService(); 
         private string secretWord = "";

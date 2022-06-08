@@ -3,8 +3,8 @@ using System;
 namespace unit03_jumper
 {
     public class Jumper{ //Jumper class handles the lives of the jumper as well as printing his animation status
-        TerminalService terminalservice = new TerminalService();
-        int lives;
+        public TerminalService terminalservice = new TerminalService();
+        public int lives;
         public Jumper() //initializes the lives, and displays them at the beginning of the game.
         {
             lives = 4;
@@ -17,45 +17,45 @@ namespace unit03_jumper
         {
             if (lives == 4)
             {
-                Console.WriteLine("     ___     ");
-                Console.WriteLine("   /_____\\  ");
-                Console.WriteLine("   \\     /  ");
-                Console.WriteLine("    \\   /   ");
+                terminalservice.WriteText("     ___     ");
+                terminalservice.WriteText("   /_____\\  ");
+                terminalservice.WriteText("   \\     /  ");
+                terminalservice.WriteText("    \\   /   ");
             } 
             else if (lives == 3) 
             {
-                Console.WriteLine();
-                Console.WriteLine("   /_____\\  ");
-                Console.WriteLine("   \\     /  ");
-                Console.WriteLine("    \\   /   ");
+                terminalservice.WriteSpace();
+                terminalservice.WriteText("   /_____\\  ");
+                terminalservice.WriteText("   \\     /  ");
+                terminalservice.WriteText("    \\   /   ");
             }
             else if (lives == 2)
             {
-                Console.WriteLine();
-                Console.WriteLine("   \\     /  ");
-                Console.WriteLine("    \\   /   ");
+                terminalservice.WriteSpace();
+                terminalservice.WriteText("   \\     /  ");
+                terminalservice.WriteText("    \\   /   ");
             } 
             else if (lives == 1)
             {
-                Console.WriteLine();
-                Console.WriteLine("    \\   /   ");
+                terminalservice.WriteSpace();
+                terminalservice.WriteText("    \\   /   ");
             }
 
             if (lives > 0) 
             {
-                Console.WriteLine();
-                Console.WriteLine("      0   ");
-                Console.WriteLine("     /|\\ ");
-                Console.WriteLine("     / \\ ");
-                Console.WriteLine("  ^^^^^^^^^ ");
+                terminalservice.WriteSpace();
+                terminalservice.WriteText("      0   ");
+                terminalservice.WriteText("     /|\\ ");
+                terminalservice.WriteText("     / \\ ");
+                terminalservice.WriteText("  ^^^^^^^^^ ");
             }
             else
             {
-                Console.WriteLine();
-                Console.WriteLine("      X   ");
-                Console.WriteLine("     /|\\ ");
-                Console.WriteLine("     / \\ ");
-                Console.WriteLine("  ^^^^^^^^^ ");
+                terminalservice.WriteSpace();
+                terminalservice.WriteText("      X   ");
+                terminalservice.WriteText("     /|\\ ");
+                terminalservice.WriteText("     / \\ ");
+                terminalservice.WriteText("  ^^^^^^^^^ ");
             }
         }
 
