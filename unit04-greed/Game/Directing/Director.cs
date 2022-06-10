@@ -87,7 +87,7 @@ namespace Unit04.Game.Directing
                 banner.SetText(totalscore.ToString());
                 actor.MoveNext(maxX, maxY);
                 
-                if (xDifference < 4 && yDifference < 4)
+                if (xDifference < 6 && yDifference < 6)
                 {
                     Artifact artifact = (Artifact) actor;
                     totalscore += artifact.GetValue();
