@@ -24,7 +24,7 @@ namespace Unit04
         private static string CAPTION = "Robot Finds Kitten"; // victory message
         private static string DATA_PATH = "Data/messages.txt"; // file path of the long list of random messages in the game
         private static Color WHITE = new Color(255, 255, 255); // the color white
-        private static int DEFAULT_ARTIFACTS = 40; // minimum number of artifacts the game can have, which is 40
+        private static int DEFAULT_ARTIFACTS = 100; // minimum number of artifacts the game can have, which is 40
 
 
         /// <summary>
@@ -56,12 +56,26 @@ namespace Unit04
             Random random = new Random(); //random object
             for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
             {
-                int value = -1;
-                string text = ((char)random.Next(33, 126)).ToString();
+                int num = random.Next(0, 2);
+                int value = 0;
+                string text = "";
 
+                if (num == 1) 
+                {
+                    text = "*";
+                    value = 1;
+                }
+                
+                else if (num == 0)
+                {
+                    text = "O";
+                    value = -1;
+                }
+                int[] velocity_array = new int[] {1, 3, 5, 9};
                 int x = random.Next(1, COLS);
                 int y = random.Next(1, ROWS);
                 Point position = new Point(x, y);
+                Point velocity = new Point(random.Next(-1, 1), velocity_array[random.Next(0, 3)]);
                 position = position.Scale(CELL_SIZE);
 
                 int r = random.Next(0, 256);
@@ -70,6 +84,7 @@ namespace Unit04
                 Color color = new Color(r, g, b);
 
                 Artifact artifact = new Artifact();
+                artifact.SetVelocity(velocity);
                 artifact.SetText(text);
                 artifact.SetFontSize(FONT_SIZE);
                 artifact.SetColor(color);

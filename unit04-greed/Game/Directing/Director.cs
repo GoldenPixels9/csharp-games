@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unit04.Game.Casting;
 using Unit04.Game.Services;
@@ -16,6 +17,8 @@ namespace Unit04.Game.Directing
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
         private int totalscore = 0;
+        Random random = new Random();
+
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -72,11 +75,25 @@ namespace Unit04.Game.Directing
 
             foreach (Actor actor in artifacts)
             {
-                if (robot.GetPosition().Equals(actor.GetPosition()))
+
+                int rx = robot.GetPosition().GetX();
+                int ry = robot.GetPosition().GetY();
+                int ax = actor.GetPosition().GetX();
+                int ay = actor.GetPosition().GetY();
+
+                int xDifference = Math.Abs(rx - ax);
+                int yDifference = Math.Abs(ry - ay);
+
+                banner.SetText(totalscore.ToString());
+                actor.MoveNext(maxX, maxY);
+                
+                if (xDifference < 4 && yDifference < 4)
                 {
                     Artifact artifact = (Artifact) actor;
                     totalscore += artifact.GetValue();
                     banner.SetText(totalscore.ToString());
+                    Point newPosition = new Point ((random.Next(0, 60) * 15) , 0);
+                    artifact.SetPosition(newPosition);
                 }
             } 
         }
