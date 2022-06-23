@@ -4,6 +4,8 @@ namespace Unit04.Game.Casting
 {
     public class Artifact : Actor
     {
+        int artifact_value;
+        string artifact_text;
         private int value;
         public Artifact()
         {
@@ -18,6 +20,27 @@ namespace Unit04.Game.Casting
         {
             this.value = value;
         }
+
+        public string physicalIdentity(int num){
+            if (num == 1){
+                artifact_text = "*";
+            }
+            else if (num == 0){
+                artifact_text = "O";
+            }
+            return artifact_text;
+        }
+
+        public int scoreValue(int num){
+             if (num == 1){
+                artifact_value = 1;
+            }
+            else if (num == 0){
+                artifact_value = -1;
+            }
+            return artifact_value;
+        }
+
     } 
 }
     // TODO: Implement the Artifact class here

@@ -60,17 +60,7 @@ namespace Unit04
                 int value = 0;
                 string text = "";
 
-                if (num == 1) 
-                {
-                    text = "*";
-                    value = 1;
-                }
-                
-                else if (num == 0)
-                {
-                    text = "O";
-                    value = -1;
-                }
+
                 int[] velocity_array = new int[] {1, 3, 5, 9};
                 int x = random.Next(1, COLS);
                 int y = random.Next(1, ROWS);
@@ -84,6 +74,8 @@ namespace Unit04
                 Color color = new Color(r, g, b);
 
                 Artifact artifact = new Artifact();
+                value = artifact.scoreValue(num);
+                text = artifact.physicalIdentity(num);
                 artifact.SetVelocity(velocity);
                 artifact.SetText(text);
                 artifact.SetFontSize(FONT_SIZE);
